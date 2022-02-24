@@ -2,50 +2,35 @@
 
 package com.bridgelab;
 
-import java.util.Scanner;
+import java.util.*;
 
-public class AddressBookSystem {
+public class AddressBook {
+	 String firstName, lastName, address, city, state,email;
+	    long phoneNo;
+	    int zip;
+	    public void setDetails(){
 
-    public static void main(String[] args) {
-        PersonContact details = new PersonContact();
-        details.operations();
-    }
+	        firstName = "Nilofar";
+	        lastName = "Mujawar";
+	        address = "KarmveerNagar";
+	        city ="Nandre";
+	        state = "Maharashta";
+	        zip = 416416;
+			phoneNo = 8830602356;
+	        email = "nilofarmujawar1118@gmail.com";
+	    }
+	    public void printDetails(){
+
+	        System.out.println("\nFirst Nmae : " + firstName  + "\n\nLast Name : " + lastName + "\n\nAddress : " + address + "\n\nCity : " + city + "\n\nState : " + state + "\n\nZip : " + zip + "\n\nPhone Number : " + phoneNo + "\n\nE-mail : " + email); 
+	    }
 }
 
-class PersonContact{
-    public void operations(){
-        String arrayInput[] = new String[100];
-        int numOfContactDetails = 0;
-        Scanner sc = new Scanner(System.in);
-        int i = 0,j = 1;
-
-        System.out.println("Enter how many contact details you want to add");
-        numOfContactDetails = sc.nextInt();
-        int numOfDetails = numOfContactDetails;
-        while(numOfDetails > 0) {
-            System.out.println("For Person"+j);
-            System.out.println("Add first name");
-            arrayInput[i++] = sc.next();
-            System.out.println("Add last name");
-            arrayInput[i++] = sc.next();
-            System.out.println("Add address");
-            arrayInput[i++] = sc.next();
-            System.out.println("Add state");
-            arrayInput[i++] = sc.next();
-            System.out.println("Add zip");
-            arrayInput[i++] = sc.next();
-            System.out.println("Add phone number");
-            arrayInput[i++] = sc.next();
-            System.out.println("Add email");
-            arrayInput[i++] = sc.next();
-            numOfDetails--;
-            j++;
-        }
-        System.out.println();
-        System.out.println("Contact Details are ");
-        for(i = 0; i < numOfContactDetails * 7; i++) {
-            System.out.println(arrayInput[i]);
-
-        }
+public class AddressBookSystem {
+	public static void main(String[] args) {
+		System.out.println("Welcome In Address Book System Program ");
+		AddressBook address = new AddressBook();//create object for addressbook class
+        address.setDetails();
+        address.printDetails();
     }
+	
 }
