@@ -4,7 +4,7 @@ import java.util.*;
 
 public class AddressBook extends Contact {
     String address, city, state;
-    int zip;
+    int zip; 
     long phoneNo;
 
     public void setAddress(String address) {
