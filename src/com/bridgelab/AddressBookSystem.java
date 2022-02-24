@@ -1,51 +1,62 @@
-
-
 package com.bridgelab;
 
-import java.util.Scanner;
+import java.util.*;
 
 public class AddressBookSystem {
-
     public static void main(String[] args) {
-        PersonContact details = new PersonContact();
-        details.operations();
-    }
-}
+        
+        System.out.println("Welcome In Address Book System Program ");
+        //variables
+        String firstName, lastName, address, city, state, email;
+        int zip;
+        long phoneNo;
 
-class PersonContact{
-    public void operations(){
-        String arrayInput[] = new String[100];
-        int numOfContactDetails = 0;
         Scanner sc = new Scanner(System.in);
-        int i = 0,j = 1;
+        AddressBook contact = new AddressBook();
+        
+        System.out.print("Enter First Name  : ");
+        firstName = sc.nextLine();
+        contact.setFirstName(firstName);
 
-        System.out.println("Enter how many contact details you want to add");
-        numOfContactDetails = sc.nextInt();
-        int numOfDetails = numOfContactDetails;
-        while(numOfDetails > 0) {
-            System.out.println("For Person"+j);
-            System.out.println("Add first name");
-            arrayInput[i++] = sc.next();
-            System.out.println("Add last name");
-            arrayInput[i++] = sc.next();
-            System.out.println("Add address");
-            arrayInput[i++] = sc.next();
-            System.out.println("Add state");
-            arrayInput[i++] = sc.next();
-            System.out.println("Add zip");
-            arrayInput[i++] = sc.next();
-            System.out.println("Add phone number");
-            arrayInput[i++] = sc.next();
-            System.out.println("Add email");
-            arrayInput[i++] = sc.next();
-            numOfDetails--;
-            j++;
-        }
-        System.out.println();
-        System.out.println("Contact Details are ");
-        for(i = 0; i < numOfContactDetails * 7; i++) {
-            System.out.println(arrayInput[i]);
+        System.out.print("\nEnter Last Name  : ");
+        lastName = sc.nextLine();
+        contact.setLastName(lastName);
 
-        }
+        System.out.print("\nEnter E-mail  : ");
+        email = sc.nextLine();
+        contact.setEmail(email);
+
+        System.out.print("\nEnter Address  : ");
+        address = sc.nextLine();
+        contact.setAddress(address);
+
+        System.out.print("\nEnter City  : ");
+        city = sc.nextLine();
+        contact.setCity(city);
+
+        System.out.print("\nEnter State  : ");
+        state = sc.nextLine();
+        contact.setState(state);
+
+        System.out.print("\nEnter Phone Number  : ");
+        phoneNo = sc.nextLong();
+        contact.setPhoneNo(phoneNo);
+
+        System.out.print("\nEnter Zip  : ");
+        zip = sc.nextInt();
+        contact.setZip(zip);
+
+        sc.close();
+
+        System.out.print("\nFirst Name  : " + contact.getFirstName());
+        System.out.print("\n\nLast Name   : " + contact.getLastName());
+        System.out.print("\n\nAddress     : " + contact.getAddress());
+        System.out.print("\n\nCity        : " + contact.getCity());
+        System.out.print("\n\nState       : " + contact.getState());
+        System.out.print("\n\nPhone Number : " + contact.getPhoneNo());
+        System.out.print("\n\nE-mail      : " + contact.getEmail());
+        System.out.print("\n\nZip         : " + contact.getZip());
     }
 }
+
+
